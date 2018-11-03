@@ -1,0 +1,14 @@
+#random-box{
+    border: 4px darkgray solid;
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 250px;
+}
+.display-button{
+  margin-bottom: 20px;
+}
+#info-button{
+  margin-top: 20px;
+}

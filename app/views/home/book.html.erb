@@ -1,0 +1,15 @@
+<div class="container marketing">
+  <div class="row">
+    <% @worksheets.each do |worksheet| %>
+      <div class="col-lg-4">
+        <%= link_to random_path(@spreadsheet, worksheet.title) do %>
+          <img class="rounded-circle" src="<%= image_url('book_placeholder.png') %>" alt="Generic placeholder image" width="140" height="140">
+          <h2><%= worksheet.title %></h2>
+        <% end %>
+        <p>
+          <%= link_to "Random Now »", random_path(@spreadsheet, worksheet.title) , class: "btn btn-secondary", role: "button"%>
+        </p>
+      </div><!-- /.col-lg-4 -->
+    <% end %>
+  </div><!-- /.row -->
+</div>
