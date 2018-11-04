@@ -28,6 +28,10 @@ $(".btn.btn-secondary").click(function(){
 });
 
 function Change(ArrId){
+  var round = jQuery.parseJSON(localStorage.getItem('round'));
+  if(round != $("#round").text()){
+    $("#round").text(round);
+  }
   var temp = jQuery.parseJSON(localStorage.getItem('temp'));
   var x = Math.floor((Math.random() * temp.length) + 0);
   if(temp[x][0] == ''){
@@ -42,7 +46,6 @@ function Change(ArrId){
     var round = jQuery.parseJSON(localStorage.getItem('round'));
     round += 1;
     localStorage.setItem('round', round);
-    $("#round").text(round);
     temp = jQuery.parseJSON(localStorage.getItem('data'));
   }
   localStorage.setItem('temp', JSON.stringify(temp));
