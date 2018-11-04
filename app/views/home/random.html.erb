@@ -18,6 +18,7 @@
         <p class="text-center" id="kanji" style="display: none"></p>
         <p class="text-center" id="hira" style="display: none"></p>
         <p class="text-center" id="mean" style="display: none"></p>
+        <p class="text-center" id="round" >1</p>
       </h1>
     </div>
 
@@ -34,6 +35,7 @@
 $(document).ready(function() {
   localStorage.setItem('data', JSON.stringify(<%= raw @worksheet.rows %>));
   localStorage.setItem('temp', JSON.stringify(<%= raw @worksheet.rows %>));
+  localStorage.setItem('round', 1);
   Change();
   $('.btn.btn-secondary.active').trigger('click');
 });

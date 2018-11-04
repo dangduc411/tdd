@@ -31,6 +31,10 @@ function Change(ArrId){
   $("#mean").text(temp[x][2]);
   temp.splice(x, 1);
   if(temp.length == 0){
+    var round = jQuery.parseJSON(localStorage.getItem('round'));
+    round += 1;
+    localStorage.setItem('round', round);
+    $("#round").text(round);
     temp = jQuery.parseJSON(localStorage.getItem('data'));
   }
   localStorage.setItem('temp', JSON.stringify(temp));
