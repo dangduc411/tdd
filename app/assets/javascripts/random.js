@@ -1,4 +1,12 @@
 $("#random-box").click(function(){
+  console.log();
+  if($("#kanji").is(":visible") && $("#hira").is(":visible") && $("#mean").is(":visible")){
+    $("#kanji").hide();
+    $("#hira").hide();
+    $("#mean").hide();
+    var elementShow = $(".btn.btn-secondary.active").children().attr("name");
+    $("#"+elementShow).show();
+  }
   Change();
 });
 
