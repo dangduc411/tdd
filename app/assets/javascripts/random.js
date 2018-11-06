@@ -1,3 +1,12 @@
+$(document).ready(function() {
+  var data = $("#data").text();
+  localStorage.setItem('data', data);
+  localStorage.setItem('temp', data);
+  localStorage.setItem('round', 1);
+  Change();
+  $('.btn.btn-secondary.active').trigger('click');
+});
+
 $("#random-box").click(function(){
   console.log();
   if($("#kanji").is(":visible") && $("#hira").is(":visible") && $("#mean").is(":visible")){
