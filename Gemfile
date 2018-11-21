@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Upgarde gem for security on github
+gem "rack", ">= 2.0.6"
 
 # Bootstrap 4 gem for ruby and it need jquery
 gem 'jquery-rails'
