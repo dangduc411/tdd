@@ -3,13 +3,40 @@
     <% @worksheets.each do |worksheet| %>
       <div class="col-lg-4">
         <%= link_to random_path(@spreadsheet, worksheet.title) do %>
-          <img class="rounded-circle" src="<%= image_url('book_placeholder.png') %>" alt="Generic placeholder image" width="140" height="140">
-          <h2><%= worksheet.title %></h2>
+            <img class="rounded-circle" src="<%= image_url('book_placeholder.png') %>" alt="Generic placeholder image" width="140" height="140">
+            <h2><%= worksheet.title %></h2>
         <% end %>
         <p>
-          <%= link_to "Random Now »", random_path(@spreadsheet, worksheet.title) , class: "btn btn-secondary", role: "button"%>
+          <button type="button" class="btn btn-outline-dark select" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Select
+          </button>
         </p>
       </div><!-- /.col-lg-4 -->
     <% end %>
+    <button type="button" class="btn btn-outline-dark element" id="multi-random" style="display: none">Random Now >></button>
   </div><!-- /.row -->
 </div>
+<style type="text/css">
+.element {
+  position: fixed;
+  margin: auto;
+  left: 0px;
+  right: 0;
+  bottom: 10px;
+  height: fit-content;
+  width: fit-content;
+}
+</style>
+<script type="text/javascript">
+  $(".select").click(function () {
+    setTimeout(function(){
+      var selecting = $("button.active").length;
+      if(selecting > 0){
+        $("#multi-random").show();
+      }
+      else if (selecting == 0) {
+        $("#multi-random").hide();
+      }
+    }, 300);
+  })
+</script>
