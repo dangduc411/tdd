@@ -50,7 +50,7 @@ function Change(ArrId){
   $("#hira").text(temp[x][1]);
   $("#mean").text(temp[x][2]);
   temp.splice(x, 1);
-  UpdatePercent();
+  UpdatePercent(temp.length);
   if(temp.length == 0){
     var round = jQuery.parseJSON(localStorage.getItem('round'));
     round += 1;
@@ -60,9 +60,8 @@ function Change(ArrId){
   localStorage.setItem('temp', JSON.stringify(temp));
 };
 
-function UpdatePercent(){
+function UpdatePercent(LengthOfTempArray){
   var total = jQuery.parseJSON(localStorage.getItem('data')).length;
-  var temp = jQuery.parseJSON(localStorage.getItem('temp')).length;
-  var percent = 100-(temp * 100 / total);
+  var percent = ((total-LengthOfTempArray)*100)/total;
   $(".progress-bar").width(percent + '%');
 }

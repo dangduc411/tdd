@@ -7,36 +7,16 @@
             <h2><%= worksheet.title %></h2>
         <% end %>
         <p>
-          <button type="button" class="btn btn-outline-dark select" data-toggle="button" aria-pressed="false" autocomplete="off">
+          <button type="button" class="btn btn-outline-secondary select" id="<%= worksheet.gid %>" data-toggle="button">
             Select
           </button>
         </p>
       </div><!-- /.col-lg-4 -->
     <% end %>
-    <button type="button" class="btn btn-outline-dark element" id="multi-random" style="display: none">Random Now >></button>
+    <button type="button" class="btn btn-secondary element" id="multi-random", style="display:none;">Random Now >></button>
+    <%= link_to "Random Now »", multi_random_path(@spreadsheet), {id: "link_multi_random", style: "display:none"}%>
   </div><!-- /.row -->
 </div>
-<style type="text/css">
-.element {
-  position: fixed;
-  margin: auto;
-  left: 0px;
-  right: 0;
-  bottom: 10px;
-  height: fit-content;
-  width: fit-content;
-}
-</style>
-<script type="text/javascript">
-  $(".select").click(function () {
-    setTimeout(function(){
-      var selecting = $("button.active").length;
-      if(selecting > 0){
-        $("#multi-random").show();
-      }
-      else if (selecting == 0) {
-        $("#multi-random").hide();
-      }
-    }, 300);
-  })
-</script>
+
+<%= javascript_include_tag "book", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "book", :media => "all", "data-turbolinks-track" => true%>

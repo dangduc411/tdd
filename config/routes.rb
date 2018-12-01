@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   get 'home/lesson/:spreadsheet_id' => 'home#book', as: :get_book
 
+  get 'home/random/:spreadsheet_id/multi_random' => 'home#multi_random', as: :multi_random
+
   get 'home/random/:spreadsheet_id/:worksheet_title' => 'home#random', as: :random
 end

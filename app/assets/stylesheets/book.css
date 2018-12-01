@@ -1,0 +1,12 @@
+.element {
+  position: fixed;
+  margin: auto;
+  left: 0px;
+  right: 0;
+  bottom: 10px;
+  height: fit-content;
+  width: fit-content;
+}
+#multi-random{
+  display: none;
+}
