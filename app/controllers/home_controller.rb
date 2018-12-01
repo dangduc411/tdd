@@ -30,8 +30,9 @@ class HomeController < ApplicationController
       @worksheet = spreadsheet.worksheet_by_gid(worksheet_title)
       if(@worksheet_temp.nil?)
         @worksheet_temp = @worksheet.rows
+      else
+        @worksheet_temp += @worksheet.rows
       end
-      @worksheet_temp += @worksheet.rows
     end
     @worksheet = @worksheet_temp.to_s
     render "random"
