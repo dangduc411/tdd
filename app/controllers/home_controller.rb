@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     # Authenticate a session with your Service Account
     session = GoogleDrive::Session.from_service_account_key("learnjpn-38a541147f0c.json")
     @spreadsheets = session.files
+    @spreadsheets = @spreadsheets.sort_by{ |s| s.title }
   end
 
   def book
