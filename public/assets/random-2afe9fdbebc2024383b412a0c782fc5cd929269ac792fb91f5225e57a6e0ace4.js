@@ -88,3 +88,4 @@ function UpdatePercent(LengthOfTempArray){
   var percent = ((total-LengthOfTempArray)*100)/total;
   $(".progress-bar").width(percent + '%');
 }
+;
