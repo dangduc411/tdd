@@ -115,3 +115,4 @@ function RemoveWord(){
   UpdatePercent(temp.length);
   localStorage.setItem('data', JSON.stringify(data));
 }
+;
