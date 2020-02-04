@@ -6,10 +6,16 @@
             <img class="rounded-circle" src="<%= image_url('book_placeholder.png') %>" alt="Generic placeholder image" width="140" height="140">
             <h2><%= worksheet.title %></h2>
         <% end %>
+        
         <p>
           <button type="button" class="btn btn-outline-secondary select" id="<%= worksheet.gid %>" data-toggle="button" aria-pressed="false" autocomplete="off">
             Select
           </button>
+          <%= link_to list_path(@spreadsheet, worksheet.title) do %>
+            <button type="button" class="btn btn-outline-secondary">
+              List
+            </button>
+          <% end %>
         </p>
       </div><!-- /.col-lg-4 -->
     <% end %>

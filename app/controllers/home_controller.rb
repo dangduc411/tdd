@@ -14,6 +14,14 @@ class HomeController < ApplicationController
     @spreadsheet = params[:spreadsheet_id]
   end
 
+  def list
+    # Authenticate a session with your Service Account
+    session = GoogleDrive::Session.from_service_account_key("learnjpn-38a541147f0c.json")
+    spreadsheet = session.file_by_id(params[:spreadsheet_id])
+    @worksheet = spreadsheet.worksheet_by_title(params[:worksheet_title])
+    @worksheet = @worksheet.rows
+  end
+
   def random
     # Authenticate a session with your Service Account
     session = GoogleDrive::Session.from_service_account_key("learnjpn-38a541147f0c.json")
