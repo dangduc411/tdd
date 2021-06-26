@@ -10,7 +10,7 @@ gem "rack", ">= 2.0.6"
 
 # Bootstrap 4 gem for ruby and it need jquery
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 # Google driver for access file
 gem 'google_drive'
 
