@@ -9,7 +9,7 @@ $(document).ready(function() {
 });
 
 $("#remove").click(function(){
-  // Remove showing word from data and trigger click to next work
+  // Remove showed word from data and trigger click to next work
   RemoveWord();
   $("#random-box").trigger('click');
 });
