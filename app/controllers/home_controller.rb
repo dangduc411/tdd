@@ -26,8 +26,11 @@ class HomeController < ApplicationController
     # Authenticate a session with your Service Account
     session = GoogleDrive::Session.from_service_account_key("learnjpn-38a541147f0c.json")
     spreadsheet = session.file_by_id(params[:spreadsheet_id])
-    @worksheet = spreadsheet.worksheet_by_title(params[:worksheet_title])
-    @worksheet = @worksheet.rows.to_s
+    worksheet_raw = spreadsheet.worksheet_by_title(params[:worksheet_title])
+    @worksheet = Array.new
+    worksheet_raw.rows.each do |row|
+      @worksheet.push(row)
+    end
   end
 
   def multi_random
